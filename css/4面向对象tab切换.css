@@ -1,0 +1,45 @@
+.tabsbox{
+    width: 700px;
+    height: 400px;
+    margin: 100px auto;
+    border: 1px solid #ff8400;
+}
+.fisrstnav{
+    width: 100%;
+    height: 60px;
+    background-color: antiquewhite;
+    overflow: hidden;
+}
+ul{
+    display: flex;
+    position: relative;
+}
+li{
+    margin: 10px auto;
+    border-bottom: 1px solid #ff8400;
+}
+.tabadd{
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: -20px;
+    background-color: #ff8400;
+    float: right;
+    border: 1px solid #ff8400;
+}
+.liactive{
+    background-color: #ff8400;
+    border: none;
+}
+section{
+    display: none;
+}
+.conactive{
+    display: block;
+}
+.remove{
+    background-color: aqua;
+    top: 10px !important;
+    position: absolute;
+    padding-left: 20px;
+    padding-top: -10px;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //扩展运算符能将数组 转化为逗号分隔的参数序列 有索引号
+        const tfboys = ['易烊千玺', '王源', '王俊凯']
+        function update(){
+            console.log(arguments);
+        }
+        console.log(...tfboys)  //易烊千玺 王源 王俊凯
+    </script>
+</body>
+</html>

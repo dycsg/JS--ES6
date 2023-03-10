@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建symbol
+        let s = Symbol
+        console.log(s, typeof s);
+        // 唯一的标识
+        let s2 = Symbol('丁阳财')
+        let s3 = Symbol('丁阳财')
+        console.log(s2 === s3);    //false
+        // .for 可以创建一样的
+        let s4 = Symbol.for('赵元清')
+        let s5 = Symbol.for('赵元清')
+        console.log(s4 === s5); //true
+
+        // 添加属性
+        let youxi = {
+            name: '王者荣耀',
+            [Symbol('say')]: function(s) {
+                console.log('wncdnc');
+            },
+            [Symbol('dyc')]: function(s) {
+                console.log('xsnjsn')
+            }
+        }
+
+        console.log(youxi);
+    </script>
+</body>
+</html>

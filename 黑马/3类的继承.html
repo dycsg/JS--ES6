@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击我是帅哥</button>
+    <script>
+        // 让儿子继承100块
+        class Father {
+            constructor() {
+
+            }
+            // 创建函数方法 钱
+            money() {
+                console.log('100块');
+            }
+        }
+
+        // 语法： 子类Son extends 继承 父类Father
+        class Son extends Father {
+            //    子类里面上面都没有 是空的
+
+        }
+        // 调用
+        var son = new Son();
+        // 打印
+        son.money()    //100块
+
+
+
+
+
+
+
+        console.log('-----------------------------------');
+
+
+
+
+
+
+
+
+        // 子类向父类传递参数
+        class Max {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y
+            }
+            sum() {
+                console.log(this.x + this.y); // 3     44
+            }
+        }
+        class Min extends Max {
+            constructor(x, y) {
+                super(x, y)  //调用了父类中的构造函数
+            }
+        }
+        // 传参
+        var min = new Min(1, 2)
+        var mins = new Min(11, 33)
+        // 调用
+        min.sum()
+        mins.sum()
+
+
+
+
+
+        console.log('-----------------------------------');
+
+
+
+
+
+
+        // super 关键字调用父类普通函数
+
+        // 父类
+        class Dyc {
+            say() {
+                return '我是爸爸'
+            }
+        }
+        // 子类   extends Dyc不能忘记写这个
+        class Zyq extends Dyc {
+            say() {
+                // console.log('我是儿子'); //我是儿子
+                console.log(super.say() + '的儿子') //调用了父类中的普通函数 say()
+                // 我是爸爸的儿子
+            }
+        }
+        // 实例化
+        var son = new Zyq();
+        son.say();
+
+        // 就近原则
+        // 继承中，如果实例化子类输出一个方法，就会先看子类有没有方法，如果有就会先执行子类里面的方法
+        // 继承中，如果子类里面没有，就会再去查找父类里面有没有这个方法，如果有如果有就才会执行父类里面的方法
+
+
+
+
+
+
+
+        console.log('-----------------------------------');
+
+
+
+
+
+        // 子类继承父类方法同时扩展自己的方法
+
+        //父类已经有加法 的方法了
+        class Top {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y
+            }
+            sum() {
+                console.log(this.x + this.y);   //8
+            }
+        }
+
+        //子类继承父类的加法 方法  同时 扩展减法的方法
+        class Bottom extends Top {
+            constructor(x, y) {
+                // 利用super调用 父类的构造方法
+                // super必须再子类的 this之前 调用
+                super(x, y);
+
+                this.x = x
+                this.y = y
+            }
+            subtract() {
+                console.log(this.x - this.y);  //2
+            }
+        }
+
+        var son = new Bottom(5, 3)
+        son.subtract()
+        son.sum()
+
+        // 注意：super必须再子类的this之前调用
+
+
+        console.log('-----------------------------------');
+
+
+
+        // var mn = new My('美女')
+        // mn.aing()        //报错
+        class My {
+            constructor(uname, age) {
+                this.uname = uname
+                this.age = age
+            }
+            aing() {
+                console.log(this.uname);
+            }
+        }
+        var mn = new My('美女')
+        mn.aing()
+        // 在es6 中没有变量提升 所以必须先定义类 才能通过类 实例化对象
+        // 类里面的 共有属性 和方法一定要加 this使用 不然报错
+
+        // 共有的方法一定一定要加 this
+
+
+        console.log('-----------------------------------');
+
+
+
+        class You {
+            constructor(uname, age) {
+                this.uname = uname
+                this.age = age
+                this.Ding()
+                // 属性和方法必须加this
+                this.btn = document.querySelector('button')
+                this.btn.onclick = this.Ding()
+
+            }
+            Ding() {
+                console.log(this.uname);
+            }
+        }
+        var l = new You('我是帅哥')
+        // 如果想要不调用 实例化就能用就要 用this.Ding()   不是 l.Ding()
+
+        // this 的指向 问题
+        // constructor 里面的this 指向的是 实例对象  195行   
+        // 191 行 方法里面的this指向的是这个方法的调用者
+    </script>
+</body>
+
+</html>

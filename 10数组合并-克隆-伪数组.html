@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // 扩展运算符  ... 合并数组
+        const dyc = ['打球', '打王者']
+        const zyq = ['逛街', '拍照']
+        let xingArr = [...dyc, ...zyq]
+        console.log(xingArr);
+
+        console.log('------------------------------------');
+
+        // 数组克隆
+        const juArr = ['美女', '帅哥', '小孩']
+        const krArr = [...juArr]
+        console.log(krArr);
+
+        console.log('------------------------------------');
+
+        // 将伪数组 转化为真正的数组
+        const div = document.querySelectorAll('div')
+        const divArr = [...div]
+        console.log(divArr);
+    </script>
+</body>
+
+</html>

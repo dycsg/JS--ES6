@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 允许在大括号里面直接写入变量和和函数作为对象的属性和方法
+        // 这样书写更加简洁
+        let name = '南昌职业大学'
+        let change = function(){
+            console.log('nb');
+        }
+
+        // es6
+        const school = {
+            name,
+            change,
+            import(){
+                console.log('zyq');
+            }
+        }
+        console.log(school);
+    </script>
+</body>
+</html>
