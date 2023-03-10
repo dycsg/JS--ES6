@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="./md/诗词.md"></a>
+    <script>
+        const p = new Promise(function (resolve, reject) {
+            setTimeout(() => {
+                let data = '读取成功，假如这是数据库的用户数据'   //如果成功就调用这两句话
+                resolve(data)   
+                
+                // let err = '数据读取失败'               //如果失败就调用这两句话
+                // reject(err)
+            }, 1000)
+        })
+
+        // 调用promise对象then方法
+        p.then(function (value) {        //如果成功就调用第一个函数
+            console.log(value);
+        }, function (reason) {           //如果失败就调用第二个函数
+            console.error(reason)
+        })
+    </script>
+</body>
+
+</html>

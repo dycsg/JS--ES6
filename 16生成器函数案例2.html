@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/Promise的使用/2Promise读取文件.js"></a>
+    <script>
+        // 一秒钟调用一个函数
+        function yhsj() {
+            setTimeout(() => {
+                let data = '用户数据'
+                dyc.next(data)
+            }, 1000)
+        }
+        function ddsj() {
+            setTimeout(() => {
+                let data = '订单数据'
+                dyc.next(data)
+            }, 1000)
+        }
+        function spsj() {
+            setTimeout(() => {
+                let data = '商品数据'
+                dyc.next(data)
+            }, 1000)
+        }
+        // 声明
+        function* gen() {
+            let d = yield yhsj()
+            console.log(d);
+            let y = yield ddsj()
+            console.log(y);
+            let c = yield spsj()
+            console.log(c);
+        }
+        // 调用
+        let dyc = gen()
+        dyc.next()
+    </script>
+</body>
+
+</html>
