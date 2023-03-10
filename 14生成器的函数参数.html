@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用一次next()就循环遍历调用一下yield
+        function * gen(reg){   //整个函数 添加参数
+            console.log(reg);  
+
+            let b = yield 111
+            console.log(b)
+
+            let c = yield 222
+            console.log(c);
+
+            let d = yield 333
+            console.log(d);
+        }
+        let dyc = gen('aaa');
+        console.log(dyc.next());   //调用整个函数 添加参数
+
+        console.log(dyc.next('bbb'));    //给第一个yiled添加参数
+        console.log(dyc.next('ccc'));   
+        console.log(dyc.next('ddd'));
+
+    </script>
+</body>
+</html>

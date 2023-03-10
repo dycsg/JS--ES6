@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 异步编程 文件操作
+        // 需求：1s 后控制台输出111 2s后输出222 3s 后输出333
+        // 老方法
+        // setTimeout(()=> {
+        //     console.log("111")
+        //     setTimeout(()=>{
+        //         console.log("222")
+        //         setTimeout(()=>{
+        //             console.log("333")
+        //         },3000)
+        //     },2000)
+        // },1000)
+        // 如果再有就要一直嵌套下去  维护起来非常麻烦
+
+        console.log('---------------------------------------------');
+
+        // 利用生成器的新方法
+
+        function dyc() {
+            setTimeout(() => {
+                console.log('111');
+                dy.next();
+            }, 1000)
+        }
+        function zyq() {
+            setTimeout(() => {
+                console.log('222');
+                dy.next();
+            }, 2000)
+        }
+        function xyl() {
+            setTimeout(() => {
+                console.log('333');
+                dy.next();
+            }, 3000)
+        }
+
+        function* gen() { 
+            yield dyc()
+            yield zyq()
+            yield xyl()
+        }
+        let dy = gen()
+        dy.next();    //调用整个函数
+    </script>
+</body>
+
+</html>
