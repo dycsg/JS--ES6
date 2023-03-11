@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+        // 1.数组去重
+        let dyc = [...new Set(arr)]     //只要把数组转换成 合集 合集会自动去重
+        console.log(dyc);
+
+
+        // 2.交集
+        let arr2 = [4, 5, 6, 5, 6]
+        let zyq = [...new Set(arr)].filter(item => {
+            let s2 = new Set(arr2)
+            if (s2.has(item)) {
+                return true
+            } else {
+                return false
+            }
+        }) //
+        console.log(zyq);
+
+
+        // 合并 并集
+        let sum = [...new Set([...arr, ...arr2])]
+        console.log(sum);
+
+
+        // 差集  就是有两个数组 第二个数组里面没有第一个数组的元素
+        let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item))) //
+        console.log(diff)  //123
+    </script>
+</body>
+
+</html>

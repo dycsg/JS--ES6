@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Map() 是一个升级版的对象  可以把键当做对象
+        // 声明Map
+        let m = new Map();
+
+        // 添加元素
+        m.set('name', '丁扬财')
+        m.set('change', function() {
+            console.log('我最nb');
+        })
+        let key = {
+            school: '南昌职业大学'
+        }
+        m.set(key, ['南昌', '上海', '深圳'])
+        // console.log(m)
+
+        // 大小 size
+        console.log(m.size)  //3
+
+        // 删除
+        m.delete('name')
+        console.log(m)
+
+        // 获取
+        console.log(m.get('change')) //函数
+        console.log(m.get(key)) //  数组
+
+        // 清空
+        // m.clear() //
+
+        // 遍历
+        for(let v of m){
+            console.log(v) //
+        }
+    
+    </script>
+</body>
+</html>

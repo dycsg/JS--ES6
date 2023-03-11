@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个set
+        let s = new Set()
+        let s2 = new Set(['一', '二', '三', '四', '五'])
+        // console.log(s2);
+
+        // 检测元素个数 s2.size
+        console.log(s2.size);   //5
+
+        // 添加元素
+        s2.add('六')
+        // console.log(s2);
+
+        // 删除元素    s2.delete('一')
+        s2.delete('一')
+        console.log(s2);  //5
+
+        // 检测元素是否存在  s2.has('二')
+        console.log(s2.has('二'))    //true
+
+        // 清空元素
+        // s2.clear(); //[]
+        // console.log(s2)
+
+
+        // 还可以用循环
+        for(let v of s2){
+            console.log(v); //
+        }
+    </script>
+</body>
+
+</html>
