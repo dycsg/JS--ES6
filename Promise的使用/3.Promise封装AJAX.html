@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            // 创建对象 ajax请求
+            let xhr = new XMLHttpRequest();
+            // 初始化
+            xhr.open('GET', 'https://api.apiopen.top/getJoke')
+            // 发送
+            xhr.send();
+            // 绑定事件
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
+                    // 如果成功调用resolve
+                    resolve(xhr.response);
+                } else {
+                    // 如果失败调用reject
+                    reject(xhr.status);     //console.error 错误的打印
+                }
+            }
+        })
+        // 指定回调
+        p.then(function (value) {
+            console.log(value);
+        }, function (reason) {
+            console.log(reason);
+        })
+    </script>
+</body>
+
+</html>

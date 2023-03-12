@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 创建类  class   一般用大写字母开头
+        class Sert {
+            constructor(uanme, age) {
+                this.uanme = uanme;
+                this.age = age;
+            }
+            // 添加共有的函数方法
+            sing(song) {
+                // console.log('我老婆');
+                console.log(this.uanme + song);
+            }
+        }
+        // 2.利用类创建对象 new
+        let dyc = new Sert('丁扬财', 18)
+        var zyq = new Sert('赵元清', 19)
+        // console.log(dyc);
+        // console.log(zyq);
+        // 调用
+        dyc.sing('我喜欢你')
+        zyq.sing('我爱你')
+        // 类中的所有函数不需要写function
+        // 多个函数方法之间不需要加逗号分隔
+    </script>
+</body>
+
+</html>

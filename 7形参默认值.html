@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // 允许给函数形参赋初始值
+        // 形参初始值 具有默认值的参数 一般位置要靠后
+        function add(a,b,c=10){      //给第三个赋初始值
+            return a + b + c;
+        }
+        let sum = add(1,2)  // 第三个 如果不给值就会用默认参数
+        console.log(sum);  //13 
+
+
+
+
+
+        console.log('--------------------------------');
+        // 与解构赋值 相结合    给属性赋初值值  host='172.0.0.1'
+        function connect({host='172.0.0.1', username,password,port}){
+            console.log(host); 
+            console.log(username); 
+            console.log(password); 
+            console.log(port); 
+        }
+
+        connect({
+          //  host: 'localhost',      // 如果对象里面没有传参数就会用 35行初始值 172.0.0.1
+
+            username: 'root',
+            password: '1234',
+            port: 3306
+        })
+    </script>
+</body>
+
+</html>

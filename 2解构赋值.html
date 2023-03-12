@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const F4 = ['洗洗睡', '出输出', '粗大', '超级堵车']
+        // let [xxs, scs, cd, cjdc] = F4
+        // console.log(xxs, scs, cd, cjdc);
+
+        // 对象的解构
+        const zhao = {
+            name: '赵本山',
+            age: 19,
+            xiaoping: function () {
+                console.log('我可以演小品');
+            }
+        }
+        let {name, age, xiaoping} = zhao
+        console.log(name,age);
+        xiaoping()
+    </script>
+</body>
+
+</html>

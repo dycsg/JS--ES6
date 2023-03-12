@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 如果想要调用某个js文件的功能模块就不是像以前一样用src引入js文件 -->
+    <!-- es6用的是import -->
+    <script type="module">
+        // 引入 index.js 模块内容
+        import * as index from "./js/index.js" //as 后面的index是模块 变量名 不是指定写法
+        console.log(index);
+
+        // import * as index2 from "./js/index2.js"
+
+        // import * as index3 from "./js/index3.js"
+    </script>
+
+
+
+    
+    <!-- 引入模块文件必须加入 type="module" -->
+    <script src="./js/app-模块引入文件.js" type="module"></script>
+</body>
+
+</html>

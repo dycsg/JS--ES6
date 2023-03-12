@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 生成器其实就是一个特殊函数
+        // 异步编程 纯回调函数 node fs ajax 
+        // 函数代码的分隔符
+        function * gen(){
+            yield '老大',
+            yield '老二',
+            yield '老三'
+        }
+        let dyc = gen();  //直接调用无效        循环遍历    down表示循环没有结束
+        console.log(dyc.next());    //必须调用next()方法  而且是调用一次就生成一次   false 
+        console.log(dyc.next());    
+        console.log(dyc.next());
+        console.log(dyc.next());
+
+    </script>
+</body>
+</html>
