@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // await 必须放在asycn 里面    如果错误了得用 try{} catch(e){}
+        // 创建Promise对象
+        const p = new Promise((zq, cw) => {
+            // zq('正确的数据')
+            cw('错误的数据')
+        })
+        // await 必须放在asycn 里面   得放await后面
+        async function dyc() {
+            try {
+                let zyq = await p
+                console.log(zyq);  //正确的数据
+            } catch (e) {
+                console.log(e); //就会调用cw()
+            }
+        }
+        // 调用函数
+        dyc()
+    </script>
+</body>
+
+</html>

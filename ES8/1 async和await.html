@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async和await 两种语法相结合可以让异步代码像同步代码一样
+        // async 函数的返回值是Promise对象
+        // 如果函数dyc内部语法错误... 就会返回错误的数据cw()
+        // 语法
+        async function dyc(){
+            return new Promise((zq, cw)=>{
+                zq('正确的数据')
+                // cw('错误的数据')
+            })
+        }
+        const zyq = dyc()
+
+        // 调用then方法
+        zyq.then((value)=>{
+            console.log(value);   //正确的数据
+        },(reason)=>{
+            console.log(reason);
+        })
+    </script>
+</body>
+</html>
