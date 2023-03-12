@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            // 构造方法
+            constructor(brand, price){
+                // 初始化
+                this.brand = brand;
+                this.price = price;
+            }
+            // 成员属性
+            call(){
+                console.log('我可以打电话');
+            }
+        }
+        // 子类 extends 继承
+        class NewPhone extends Phone{
+            constructor(brand, price, color, size){
+                //  调用父类的方法
+                super(brand, price);
+                // 初始化
+                this.color = color;
+                this.size = size;
+            }
+            photo(){
+                console.log('拍照')
+            }
+            playGame(){
+                console.log('玩游戏')
+            }
+            call(){
+                console.log('视频通话')   //视频通话
+            }
+        }
+        // 实例化
+        const dyc = new NewPhone('oppo',2999, '黑色', '19px');
+
+        console.log(dyc);
+        dyc.playGame();
+        dyc.photo();
+        dyc.call()
+
+        // 子类不能调用父类的同名方法
+    </script>
+</body>
+</html> 
