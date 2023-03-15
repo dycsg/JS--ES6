@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将数组转化为对象 将对象转化为数组
+        // Map
+        const m = new Map()
+        m.set('name', 'dyc')
+        const zyq = Object.fromEntries(m)
+        console.log(zyq);
+
+
+        console.log('----------------------');
+        // Object.entries ES8里面的
+        const arr = Object.entries({
+            name: 'dyc'
+        })
+        console.log(arr);
+    </script>
+</body>
+</html>

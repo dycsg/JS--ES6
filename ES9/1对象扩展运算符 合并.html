@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ... 与 spread 扩展运算符在es6 中已经引入 不过es6 中只针对于数组
+        // 在es9 中为对象提供了像数组一样的rest参数和扩展运算符
+
+        function dyc({host , port , ...user}){   // ...user后面的都会打印成一组对象
+            console.log(host);
+            console.log(port);
+            console.log(user)
+         }
+
+         dyc({
+            host: '127.0.0.1',
+            port: 3306,
+            username: 'root',
+            password: 'root'
+         })
+
+
+         console.log('--------------------------');
+
+         const A = {
+            q: 'qwer'
+         }
+
+         const B = {
+            w: 'qwfrrwfr'
+         }
+
+         const C = {
+            e: 'cdcndnsj'
+         }
+
+         const D = {
+            r: 'snjxsns'
+         }
+
+         const sum = {...A, ...B, ...C, ...D}
+         console.log(sum);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const scholl = {
+            name: '南昌职业大学',
+            cities: ['南昌', '赣州', '于都'],
+            xueke: ['一', '二', '三', '四']
+        }
+        // 获取对象所有的键
+        console.log(Object.keys(scholl));
+        console.log('----------------------------');
+        console.log(Object.values(scholl));
+        console.log('----------------------------');
+
+        // entries
+        console.log(Object.entries(scholl));
+        console.log('----------------------------');
+
+        // 创建Map
+        const dyc = new Map(Object.entries(scholl))
+        console.log(dyc);
+
+
+        console.log('----------------------------');
+        console.log(Object.getOwnPropertyDescriptors(scholl));
+    </script>
+</body>
+
+</html>

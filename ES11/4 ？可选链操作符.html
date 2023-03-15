@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ?. 可选链操作符
+
+        // 判断 ?. 用户是否传入了config 和db两个数据 在看host
+        function main(config){
+            const dyc = config?.db?.host
+            console.log(dyc);
+            // console.log();
+        }
+        main({
+            db: {
+                host: '192.168.10.1',
+                username: 'root'
+            },
+            cache: {
+                host: '192.168.10.2',
+                username: 'admin'
+            }
+        })
+        
+    </script>
+</body>
+</html>

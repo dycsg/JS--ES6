@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p1 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve('成功商品数据 1')
+            },1000)
+        })
+        const p2 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                // resolve('成功商品数据 2')
+                reject('出错了')
+            },1000)
+        })
+
+        // 调用 allSettled() 返回的结果始终成功的 fulfilled    all有一个失败返回的结果就失败的只有两个都成功才会返回成功
+        // const dyc  = Promise.allSettled([p1, p2])
+        // console.log(dyc);
+
+
+        console.log('-----------------------------------');
+        // all
+        const zyq = Promise.all([p1, p1])
+        console.log(zyq);  //出错
+
+        // 如果想要每一任务都想要成功就可以使用 all
+        
+    </script>
+</body>
+</html>

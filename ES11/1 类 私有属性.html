@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 加了#号的就是私有属性 必须通过函数 zyq() 在在外部调用即可 
+        class Person {
+            // 共有属性
+            name;
+            #age;
+            #weight;
+            constructor(name, age, weight) {
+                this.name = name
+                this.#age = age
+                this.#weight = weight
+            }
+
+            zyq(){
+                console.log(girl.name);
+                console.log(girl.#age);
+                console.log(girl.#weight);
+            }
+        }
+        // 实例化
+        const girl = new Person('元清', 18, '45kg')
+        console.log(girl);
+        console.log('-----------------------');
+        // console.log(girl.name);
+        // console.log(girl.#age);
+        // console.log(girl.#weight);   在这里调用会报错
+
+
+        // 再调用
+        girl.zyq()
+    </script>
+</body>
+
+</html>
